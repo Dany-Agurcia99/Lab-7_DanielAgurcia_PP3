@@ -13,6 +13,7 @@ private:
 
 public:
     AirB();
+    ~AirB();
     AirB(PoderEspecial*, int, string,char sexo, int edad, string nombre, string origen);
 
     PoderEspecial* getpoder();

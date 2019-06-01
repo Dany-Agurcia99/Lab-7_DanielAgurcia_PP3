@@ -11,6 +11,7 @@ private:
 
 public:
     NonB();
+    ~NonB();
     NonB(double, int, string,char sexo, int edad, string nombre, string origen);
 
     double getvelocidad();

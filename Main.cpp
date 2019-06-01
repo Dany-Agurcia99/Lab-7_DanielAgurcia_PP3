@@ -26,11 +26,11 @@ void Listar();
 void Eliminar();
 
 vector<Persona *> lista_personas;
-vector<WaterB *> lista_water;
-vector<FireB *> lista_fire;
-vector<EarthB *> lista_earth;
-vector<AirB *> lista_air;
-vector<NonB *> lista_non;
+vector<Persona *> lista_water;
+vector<Persona *> lista_fire;
+vector<Persona *> lista_earth;
+vector<Persona *> lista_air;
+vector<Persona *> lista_non;
 
 int main()
 {
@@ -97,17 +97,6 @@ void Agregar()
     int opcion2 = 0;
     while (opcion2 != 6)
     {
-        string nombre, origen;
-        int edad;
-        char sexo;
-        cout << "Ingrese el nombre de la Persona: ";
-        cin >> nombre;
-        cout << "Ingrese la edad de la Persona: ";
-        cin >> edad;
-        cout << "Ingrese el sexo de la persona [M/F]: ";
-        cin >> sexo;
-        cout << "Ingrese el origen de la persona: ";
-        cin >> origen;
         PoderEspecial *poder = NULL;
         cout << "1-Agregrar Water Bender" << endl
              << "2-Agregrar Fire Bender" << endl
@@ -117,10 +106,21 @@ void Agregar()
              << "6-Salir" << endl;
         cout << "Ingrese una opcion: " << endl;
         cin >> opcion2;
+        string nombre, origen;
+        int edad;
+        char sexo;
         switch (opcion2)
         {
         case 1:
         {
+            cout << "Ingrese el nombre de la Persona: ";
+            cin >> nombre;
+            cout << "Ingrese la edad de la Persona: ";
+            cin >> edad;
+            cout << "Ingrese el sexo de la persona [M/F]: ";
+            cin >> sexo;
+            cout << "Ingrese el origen de la persona: ";
+            cin >> origen;
             string tribu, arma;
             cout << "Ingrese la tribu: ";
             cin >> tribu;
@@ -186,10 +186,19 @@ void Agregar()
             break;
             }
             Persona *WaterBender = new WaterB(poder, tribu, arma, sexo, edad, nombre, origen);
+            lista_water.push_back(WaterBender);
         }
         break;
         case 2:
         {
+            cout << "Ingrese el nombre de la Persona: ";
+            cin >> nombre;
+            cout << "Ingrese la edad de la Persona: ";
+            cin >> edad;
+            cout << "Ingrese el sexo de la persona [M/F]: ";
+            cin >> sexo;
+            cout << "Ingrese el origen de la persona: ";
+            cin >> origen;
             int cicatrices, victorias;
             cout << "Ingrese las cicatrices: ";
             cin >> cicatrices;
@@ -255,10 +264,19 @@ void Agregar()
             break;
             }
             Persona *FireBender = new FireB(poder, cicatrices, victorias, sexo, edad, nombre, origen);
+            lista_fire.push_back(FireBender);
         }
         break;
         case 3:
         {
+            cout << "Ingrese el nombre de la Persona: ";
+            cin >> nombre;
+            cout << "Ingrese la edad de la Persona: ";
+            cin >> edad;
+            cout << "Ingrese el sexo de la persona [M/F]: ";
+            cin >> sexo;
+            cout << "Ingrese el origen de la persona: ";
+            cin >> origen;
             int coles, graduacion;
             cout << "Ingrese el numero de coles: ";
             cin >> coles;
@@ -324,10 +342,19 @@ void Agregar()
             break;
             }
             Persona *EarthBender = new EarthB(poder, coles, graduacion, sexo, edad, nombre, origen);
+            lista_earth.push_back(EarthBender);
         }
         break;
         case 4:
         {
+            cout << "Ingrese el nombre de la Persona: ";
+            cin >> nombre;
+            cout << "Ingrese la edad de la Persona: ";
+            cin >> edad;
+            cout << "Ingrese el sexo de la persona [M/F]: ";
+            cin >> sexo;
+            cout << "Ingrese el origen de la persona: ";
+            cin >> origen;
             int pelo;
             string color;
             cout << "Ingrese el numero de pelo: ";
@@ -394,10 +421,19 @@ void Agregar()
             break;
             }
             Persona *AirBender = new AirB(poder, pelo, color, sexo, edad, nombre, origen);
+            lista_air.push_back(AirBender);
         }
         break;
         case 5:
         {
+            cout << "Ingrese el nombre de la Persona: ";
+            cin >> nombre;
+            cout << "Ingrese la edad de la Persona: ";
+            cin >> edad;
+            cout << "Ingrese el sexo de la persona [M/F]: ";
+            cin >> sexo;
+            cout << "Ingrese el origen de la persona: ";
+            cin >> origen;
             string trabajo;
             double velocidad;
             int fuerza;
@@ -408,6 +444,7 @@ void Agregar()
             cout << "Ingrese el trabajo(str): ";
             cin >> trabajo;
             Persona *NonBender = new NonB(velocidad, fuerza, trabajo, sexo, edad, nombre, origen);
+            lista_non.push_back(NonBender);
         }
         break;
         }
@@ -449,4 +486,86 @@ void Listar()
 
 void Eliminar()
 {
+    int opcion = 0;
+    cout << "1-Eliminar Water Bender" << endl
+         << "2-Eliminar Fire Bender" << endl
+         << "3-Eliminar Earth Bender" << endl
+         << "4-Eliminar Air Bender" << endl
+         << "5-Eliminar Non Bender" << endl
+         << "6-Salir" << endl;
+    cout << "Ingrese una opcion: " << endl;
+    cin >> opcion;
+    switch (opcion)
+    {
+    case 1:
+    {
+        int posicion;
+        for (int i = 0; i < lista_water.size(); i++)
+        {
+            cout << i + ")" + lista_water[i]->toString();
+            cout << endl;
+        }
+        cout << "Ingrese la posicion que quiere eliminar: ";
+        cin >> posicion;
+        lista_water.erase(lista_water.begin() + lista_water.size());
+        cout << "Borrado con exito";
+    }
+    break;
+    case 2:
+    {
+        int posicion;
+        for (int i = 0; i < lista_fire.size(); i++)
+        {
+            cout << i + ")" + lista_fire[i]->toString();
+            cout << endl;
+        }
+        cout << "Ingrese la posicion que quiere eliminar: ";
+        cin >> posicion;
+        lista_fire.erase(lista_fire.begin() + lista_fire.size());
+        cout << "Borrado con exito";
+    }
+    break;
+    case 3:
+    {
+        int posicion;
+        for (int i = 0; i < lista_earth.size(); i++)
+        {
+            cout << i + ")" + lista_earth[i]->toString();
+            cout << endl;
+        }
+        cout << "Ingrese la posicion que quiere eliminar: ";
+        cin >> posicion;
+        lista_earth.erase(lista_earth.begin() + lista_earth.size());
+        cout << "Borrado con exito";
+    }
+    break;
+    case 4:
+    {
+        int posicion;
+        for (int i = 0; i < lista_air.size(); i++)
+        {
+            cout << i + ")" + lista_air[i]->toString();
+            cout << endl;
+        }
+        cout << "Ingrese la posicion que quiere eliminar: ";
+        cin >> posicion;
+        lista_air.erase(lista_air.begin() + lista_air.size());
+        cout << "Borrado con exito";
+    }
+    break;
+    case 5:
+    {
+        int posicion;
+        for (int i = 0; i < lista_non.size(); i++)
+        {
+            cout << i + ")" + lista_non[i]->toString();
+            cout << endl;
+        }
+        cout << "Ingrese la posicion que quiere eliminar: ";
+        cin >> posicion;
+        lista_non.erase(lista_non.begin() + lista_non.size());
+        cout << "Borrado con exito";
+    }
+    break;
+    }
 }

@@ -41,12 +41,13 @@ string EarthB::toString()
     string EarthBStr;
     string coles2 = to_string(coles);
     string graduacion2 = to_string(graduacion);
-    EarthBStr = "[" + coles2 + "]" + "[" + graduacion2 + "]" + poder->toString();
+    string edad2 = to_string(edad);
+    EarthBStr = "EARTH BENDER[" + nombre + "]" + "[" + edad2 + "]" + "[" + sexo + "]" + "[" + origen + "]" + coles2 + "]" + "[" + graduacion2 + "]" + poder->toString();
     return EarthBStr;
 }
 EarthB::~EarthB()
 {
-    if (poder != -NULL)
+    if (poder != NULL)
     {
         delete poder;
         poder = NULL;

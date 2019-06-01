@@ -13,6 +13,7 @@ private:
 
 public:
     FireB();
+    ~FireB();
     FireB(PoderEspecial*, int, int,char sexo, int edad, string nombre, string origen);
 
     PoderEspecial* getpoder();

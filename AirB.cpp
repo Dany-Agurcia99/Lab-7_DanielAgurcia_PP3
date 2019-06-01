@@ -40,12 +40,13 @@ string AirB::toString()
 {
     string AirBStr;
     string pelo2 = to_string(pelo);
-    AirBStr = "[" + pelo2 + "]" + "[" + color + "]" + poder->toString();
+    string edad2 = to_string(edad);
+    AirBStr = "AIR BENDER[" + nombre + "]" + "[" + edad2 + "]" + "[" + sexo + "]" + "[" + origen + "]" + pelo2 + "]" + "[" + color + "]" + poder->toString();
     return AirBStr;
 }
 AirB::~AirB()
 {
-    if (poder != -NULL)
+    if (poder != NULL)
     {
         delete poder;
         poder = NULL;

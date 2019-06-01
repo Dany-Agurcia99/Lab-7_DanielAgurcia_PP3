@@ -27,6 +27,6 @@ class Persona{
         string getOrigen();
         void setOrigen(string);
 
-        virtual string toString();
+        virtual string toString()=0;
 };
 #endif

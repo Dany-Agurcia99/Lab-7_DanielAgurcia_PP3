@@ -3,7 +3,7 @@
 NonB::NonB()
 {
 }
-NonB::NonB(double velocidad, int fuerza, string trabajo,char sexo, int edad, string nombre, string origen): Persona(sexo, edad, nombre, origen)
+NonB::NonB(double velocidad, int fuerza, string trabajo, char sexo, int edad, string nombre, string origen) : Persona(sexo, edad, nombre, origen)
 {
     this->velocidad = velocidad;
     this->fuerza = fuerza;
@@ -38,8 +38,12 @@ void NonB::settrabajo(string trabajo)
 string NonB::toString()
 {
     string NonBStr;
-    string fuerza2=to_string(fuerza);
-    string velocidad2=to_string(velocidad);
-    NonBStr = "["+velocidad2+"]"+"["+fuerza2+"]"+"["+trabajo+"]";
+    string fuerza2 = to_string(fuerza);
+    string velocidad2 = to_string(velocidad);
+    string edad2 = to_string(edad);
+    NonBStr = "NON BENDER[" + nombre + "]" + "[" + edad2 + "]" + "[" + sexo + "]" + "[" + origen + "]" + velocidad2 + "] " + "[" + fuerza2 + "] " + "[" + trabajo + "]";
     return NonBStr;
+}
+NonB::~NonB()
+{
 }

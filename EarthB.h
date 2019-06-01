@@ -13,6 +13,7 @@ private:
 
 public:
     EarthB();
+    ~EarthB();
     EarthB(PoderEspecial*, int, int,char sexo, int edad, string nombre, string origen);
 
     PoderEspecial* getpoder();

@@ -3,7 +3,7 @@
 WaterB::WaterB()
 {
 }
-WaterB::WaterB(PoderEspecial *poder, string tribu, string arma,char sexo, int edad, string nombre, string origen) : Persona(sexo, edad, nombre, origen)
+WaterB::WaterB(PoderEspecial *poder, string tribu, string arma, char sexo, int edad, string nombre, string origen) : Persona(sexo, edad, nombre, origen)
 {
     this->poder = poder;
     this->tribu = tribu;
@@ -38,12 +38,13 @@ void WaterB::setarma(string arma)
 string WaterB::toString()
 {
     string WaterBStr;
-    WaterBStr = "[" + tribu + "]" + "[" + arma + "]" + poder->toString();
+    string edad2 = to_string(edad);
+    WaterBStr = "WATER BENDER[" + nombre + "]" + "[" + edad2 + "]" + "[" + sexo + "]" + "[" + origen + "]" + tribu + "]" + "[" + arma + "]" + poder->toString();
     return WaterBStr;
 }
 WaterB::~WaterB()
 {
-    if (poder != -NULL)
+    if (poder != NULL)
     {
         delete poder;
         poder = NULL;

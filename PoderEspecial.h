@@ -20,6 +20,6 @@ public:
 
     string getnombre();
     void setnombre(string);
-    virtual string toString();
+    virtual string toString()=0;
 };
 #endif
