@@ -507,7 +507,7 @@ void Eliminar()
         }
         cout << "Ingrese la posicion que quiere eliminar: ";
         cin >> posicion;
-        lista_water.erase(lista_water.begin() + lista_water.size());
+        lista_water.erase(lista_water.begin() + posicion);
         cout << "Borrado con exito";
     }
     break;
@@ -521,7 +521,7 @@ void Eliminar()
         }
         cout << "Ingrese la posicion que quiere eliminar: ";
         cin >> posicion;
-        lista_fire.erase(lista_fire.begin() + lista_fire.size());
+        lista_fire.erase(lista_fire.begin() + posicion);
         cout << "Borrado con exito";
     }
     break;
@@ -535,7 +535,7 @@ void Eliminar()
         }
         cout << "Ingrese la posicion que quiere eliminar: ";
         cin >> posicion;
-        lista_earth.erase(lista_earth.begin() + lista_earth.size());
+        lista_earth.erase(lista_earth.begin() + posicion);
         cout << "Borrado con exito";
     }
     break;
@@ -549,7 +549,7 @@ void Eliminar()
         }
         cout << "Ingrese la posicion que quiere eliminar: ";
         cin >> posicion;
-        lista_air.erase(lista_air.begin() + lista_air.size());
+        lista_air.erase(lista_air.begin() + posicion);
         cout << "Borrado con exito";
     }
     break;
@@ -563,7 +563,7 @@ void Eliminar()
         }
         cout << "Ingrese la posicion que quiere eliminar: ";
         cin >> posicion;
-        lista_non.erase(lista_non.begin() + lista_non.size());
+        lista_non.erase(lista_non.begin() + posicion);
         cout << "Borrado con exito";
     }
     break;
